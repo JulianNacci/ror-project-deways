@@ -1,7 +1,7 @@
-class CreateAdresses < ActiveRecord::Migration
+class CreateAddresses < ActiveRecord::Migration
   def change
-    create_table :adresses do |t|
-      t.string :adress
+    create_table :addresses do |t|
+      t.string :address
       t.references :car, index: true, foreign_key: true
 
       t.timestamps null: false
