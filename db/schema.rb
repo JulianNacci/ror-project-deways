@@ -16,7 +16,6 @@ ActiveRecord::Schema.define(version: 20150824133450) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-<<<<<<< HEAD
   create_table "addresses", force: :cascade do |t|
     t.string   "address"
     t.integer  "car_id"
@@ -26,8 +25,6 @@ ActiveRecord::Schema.define(version: 20150824133450) do
 
   add_index "addresses", ["car_id"], name: "index_addresses_on_car_id", using: :btree
 
-=======
->>>>>>> master
   create_table "bookings", force: :cascade do |t|
     t.integer  "car_id"
     t.integer  "user_id"
