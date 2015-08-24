@@ -1,9 +1,7 @@
 .card {
   position: relative;
   height: 175px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-  color: white;
-  margin: 20px auto;
+  margin: 5px 10px 5px 0px;
   &-bg{
     background-size: cover;
     border-radius: 3px;
@@ -27,14 +25,33 @@
     top: 10px;
     left: 10px;
   }
+  &-container {
+    position: relative;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+    color: white;
+    margin-left: 5px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+
+    & a {
+      color: white;
+    }
+
+    & a:hover {
+      color: white;
+    }
+  }
   &-price {
     position: absolute;
     right: 0;
     bottom: 12px;
     padding: 12px;
     line-height: 10px;
-
     background-color: $brand-color;
+    z-index: 2;
+    border-radius: 2px;
+    font-size: 23px;
+
     &-day {
       font-size: 10px;
     }
@@ -60,11 +77,13 @@
     top: 0;
     bottom: 0;
     width: 100%;
-    z-index:2;
+    z-index: 1;
     background: black;
     opacity: 0;
+    cursor: pointer;
     &:hover{
       opacity: 0.1;
+      cursor: pointer;
     }
   }
 }
