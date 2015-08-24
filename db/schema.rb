@@ -11,10 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150824125331) do
+ActiveRecord::Schema.define(version: 20150824131919) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cars", force: :cascade do |t|
+    t.string   "make"
+    t.string   "model"
+    t.string   "motorisation"
+    t.string   "category"
+    t.integer  "seats"
+    t.integer  "user_id"
+    t.float    "daily_rate"
+    t.text     "description"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "year"
+    t.string   "gear_box"
+    t.string   "doors"
+    t.string   "gaz_consumption"
+  end
+
+  add_index "cars", ["user_id"], name: "index_cars_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -34,4 +53,5 @@ ActiveRecord::Schema.define(version: 20150824125331) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "cars", "users"
 end
