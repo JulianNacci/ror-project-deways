@@ -6,6 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+User.create({first_name: "Arthur", last_name: "Duplan", email: "arthur.duplan@gmail.com"})
+
 cars_array = [
 {
 make: "Volkswagen",
@@ -16,7 +18,6 @@ year: "2000",
 category: "Citadine",
 seats: 5,
 doors: "5",
-user_id: 1,
 daily_rate: 25,
 description: "Véhicule très agréable a conduire, bonne tenue de route. Coffre spacieux idéal pour vacances ou week end en province. Faible consommation de carburant, et propreté intérieure garantie.
 Éraflures très légères en extérieur, très bon entretien intérieur.
@@ -33,7 +34,6 @@ year: "2014",
 category: "4x4",
 seats: 4,
 doors: "5",
-user_id: 1,
 daily_rate: 36,
 description: "",
 gaz_consumption: "7"
@@ -48,7 +48,6 @@ year: "2008",
 category: "Citadine",
 seats: 5,
 doors: "5",
-user_id: 1,
 daily_rate: 24,
 description: "Seat Ibiza 12V 5CV
 Bon état général
@@ -74,7 +73,6 @@ year: "2007",
 category: "Minibus",
 seats: 9,
 doors: "5",
-user_id: 1,
 daily_rate: 59,
 description: "",
 gaz_consumption: "8"
@@ -89,7 +87,6 @@ year: "2005",
 category: "Berline",
 seats: 9,
 doors: "5",
-user_id: 1,
 daily_rate: 24,
 description: "Arrangement possible pour une prise en charge et une restitution du véhicule à la gare SNCF ou l'aéropor",
 gaz_consumption: "5"
@@ -104,7 +101,6 @@ year: "2001",
 category: "Utilitaire",
 seats: 2,
 doors: "5",
-user_id: 1,
 daily_rate: 30,
 description: "A",
 gaz_consumption: "4"
@@ -119,7 +115,6 @@ year: "2011",
 category: "Cabriolet",
 seats: 2,
 doors: "3",
-user_id: 1,
 daily_rate: 20,
 description: "cabriolet 2 places en excellent état.
 Location par période de 15 jours souhaitée.",
@@ -135,7 +130,6 @@ year: "2010",
 category: "Citadine",
 seats: 5,
 doors: "5",
-user_id: 1,
 daily_rate: 28,
 description: "Excellent état général. Aucun problème particulier à signaler.",
 gaz_consumption: "5"
@@ -150,7 +144,6 @@ year: "2005",
 category: "Citadine",
 seats: 5,
 doors: "5",
-user_id: 1,
 daily_rate: 23,
 description: "Voiture bien entretenue, l'intérieur est assez propre.
 Bénéficiant de la climatisation et étant très modulable, elle est spacieuse et compacte et donc idéale pour les petites familles.
@@ -167,7 +160,6 @@ year: "2012",
 category: "Citadine",
 seats: 5,
 doors: "5",
-user_id: 1,
 daily_rate: 35,
 description:"
 Bien entretenue - dort en parking fermé",
@@ -183,7 +175,6 @@ year: "2012",
 category: "Minibus",
 seats: 9,
 doors: "4",
-user_id: 1,
 daily_rate: 59,
 description: "Véhicule en très bon état, mécanique et carrosserie. Entretien régulier.
 Pour éviter les bouchons, possibilité de location d'un GPS info trafic, pour 10€/location",
@@ -199,7 +190,6 @@ year: "2007",
 category: "Coupé",
 seats: 5,
 doors: "3",
-user_id: 1,
 daily_rate: 40,
 description: "Amis automobilistes Bonjour !
 Bonne routière sportive et confortable avec toit panoramique, vous prendrez plaisir à conduire ma voiture pour vos virées à la campagne ou juste pour vos expéditions à IKEA ;)
@@ -223,7 +213,6 @@ year: "2003",
 category: "Familiale",
 seats: 7,
 doors: "5",
-user_id: 1,
 daily_rate: 40,
 description: "Bon état général. Contrôle technique récent.
 Pneus Michelin neufs.
@@ -241,7 +230,6 @@ year: "2003",
 category: "Citadine",
 seats: 5,
 doors: "5",
-user_id: 1,
 daily_rate: 30,
 description: "",
 gaz_consumption: "7"
@@ -256,7 +244,6 @@ year: "2013",
 category: "Familiale",
 seats: 5,
 doors: "5",
-user_id: 1,
 daily_rate: 50,
 description: "Voiture en excellent état . Kit main libre / bluetooth",
 gaz_consumption: "6"
@@ -271,7 +258,6 @@ year: "2013",
 category: "Citadine",
 seats: 5,
 doors: "5",
-user_id: 1,
 daily_rate: 33,
 description: "",
 gaz_consumption: "7"
@@ -286,7 +272,6 @@ year: "2001",
 category: "Berline",
 seats: 5,
 doors: "3",
-user_id: 1,
 daily_rate: 30,
 description: "",
 gaz_consumption: "5"
@@ -301,7 +286,6 @@ year: "1998",
 category: "Utilitaire",
 seats: 3,
 doors: "4",
-user_id: 1,
 daily_rate: 30,
 description: "Camion pouvant servir pour un déménagement ou autre.
 Porte latérale enfoncée sur le bas mais n empêchant en aucun cas sa fonctionnalité.
@@ -315,6 +299,7 @@ gaz_consumption: "7"
 cars_array.each do |car|
   Car.create(car)
 end
+
 
 reviews_array = [
 ]

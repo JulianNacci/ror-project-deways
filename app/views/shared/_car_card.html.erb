@@ -1,18 +1,24 @@
-<div class="card">
-  <span class="card-bg"></span>
-  <span class="card-shadow"></span>
-  <span class="card-description">Popular</span>
-  <span class="card-text">
-    <h2><%= car.make %></h2>
-    <p><%= car.model %></p>
-    <p><%= car.motorisation %></p>
-    <p><%= car.user.email %></p>
-  </span>
+
+<div class="card-container">
+
+  <div class="card">
+  <%= link_to car_path(car) do %>
+  <span class="card-link"></span>
+    <span class="card-bg"></span>
+    <span class="card-shadow"></span>
+    <span class="card-description">Popular</span>
+    <span class="card-text">
+      <h2><%= car.make %></h2>
+      <p><%= car.model %></p>
+      <p><%= car.motorisation %></p>
+    </span>
+    <span class="card-user">
+    <p><%= "Julian" %> <%= "N" %>.</p>
+      <img src='user.jpg' class="avatar avatar-bordered"/>
+    </span>
+  <% end %>
+  </div>
   <span class="card-price">
-    <%= car.daily_rate.to_i %><span class="card-price-day">€ / jour</span>
+      <%= car.daily_rate.to_i %>€<span class="card-price-day"> / jour</span>
   </span>
-  <span class="card-user">
-    <img src='user.jpg' class="avatar avatar-bordered"/>
-  </span>
-  <a href="<" class="card-link"></a>
 </div>
