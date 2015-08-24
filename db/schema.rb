@@ -61,6 +61,17 @@ ActiveRecord::Schema.define(version: 20150824145739) do
 
   add_index "cars", ["user_id"], name: "index_cars_on_user_id", using: :btree
 
+  create_table "messages", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "user_id"
+    t.integer  "booking_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "messages", ["booking_id"], name: "index_messages_on_booking_id", using: :btree
+  add_index "messages", ["user_id"], name: "index_messages_on_user_id", using: :btree
+
   create_table "reviews", force: :cascade do |t|
     t.text     "content"
     t.integer  "rating"
@@ -93,5 +104,7 @@ ActiveRecord::Schema.define(version: 20150824145739) do
   add_foreign_key "bookings", "cars"
   add_foreign_key "bookings", "users"
   add_foreign_key "cars", "users"
+  add_foreign_key "messages", "bookings"
+  add_foreign_key "messages", "users"
   add_foreign_key "reviews", "bookings"
 end
