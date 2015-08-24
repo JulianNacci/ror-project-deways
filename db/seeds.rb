@@ -5,3 +5,354 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+cars_array = [
+{
+make: "Volkswagen"
+,model: "Golf IV 1.9 SDI"
+,motorisation: "Diesel"
+,gear_box: "Manuelle"
+,year: "2000"
+,category: "Citadine"
+,seats: 5
+,doors: "5"
+,user_id: 1
+,daily_rate: 25
+,description:
+"
+Véhicule très agréable a conduire, bonne tenue de route. Coffre spacieux idéal pour vacances ou week end en province. Faible consommation de carburant, et propreté intérieure garantie.
+Éraflures très légères en extérieur, très bon entretien intérieur.
+Si vous souhaitez profiter de la robustesse et du confort Volswagen a petit prix, n'hésitez pas a me contacter. Échanges cordiaux et respectueux.
+"
+,gaz_consumption: "4"
+},
+
+{
+make: "Dacia"
+,model: "Duster prestige"
+,motorisation: "Diesel"
+,gear_box: "Manuelle"
+,year: "2014"
+,category: "4x4"
+,seats: 4
+,doors: "5"
+,user_id: 2
+,daily_rate: 36
+,description:
+""
+,gaz_consumption: "7"
+},
+
+{
+make: "Seat"
+,model: "Ibiza 12V"
+,motorisation: "Essence"
+,gear_box: "Manuelle"
+,year: "2008"
+,category: "Citadine"
+,seats: 5
+,doors: "5"
+,user_id: 3
+,daily_rate: 24
+,description:
+"Seat Ibiza 12V 5CV
+Bon état général
+Quelques accros et rayures sur l'extérieur
+Fenêtres électriques (fenêtre arrière gauche HS)
+Bien entretenue
+
+Horaires d’ouverture du parking :
+
+Lundi à Jeudi : 16h à 21h
+Vendredi : 16h à 22h
+Samedi : 8h à 12h et 18h à 22h
+Dimanche : 18h à 00h"
+,gaz_consumption: "7"
+},
+
+{
+make: "Renault"
+,model: "Trafic Passenger"
+,motorisation: "Diesel"
+,gear_box: "Manuelle"
+,year: "2007"
+,category: "Minibus"
+,seats: 9
+,doors: "5"
+,user_id: 4
+,daily_rate: 59
+,description:
+""
+,gaz_consumption: "8"
+},
+
+{
+make: "Toyota"
+,model: "Prius II"
+,motorisation: "Hybride"
+,gear_box: "Automatique"
+,year: "2005"
+,category: "Berline"
+,seats: 9
+,doors: "5"
+,user_id: 5
+,daily_rate: 24
+,description:
+"Arrangement possible pour une prise en charge et une restitution du véhicule à la gare SNCF ou l'aéropor"
+,gaz_consumption: "5"
+},
+
+
+{
+make: "Renault"
+,model: "Kangoo Express 1.9D"
+,motorisation: "Diesel"
+,gear_box: "Manuelle"
+,year: "2001"
+,category: "Utilitaire"
+,seats: 2
+,doors: "4"
+,user_id: 6
+,daily_rate: 30
+,description:
+"Je m'appelle Senturan, jeune homme de 25 ans qui propose à la location mon véhicule utilitaire: un Renault Kangoo très bien entretenue et très confortable.
+
+Il dispose d'un habitacle de 2 places et un grand coffre idéal pour les déménagements ou pour le transport d'objets de votre choix.
+
+Entretien garanti extérieur comme intérieur.
+
+Matériel mis à disposition:
+- embout USB-allume cigare
+- chargeur de smartphone (iPhone, Samsung, etc...)
+- poste radio USB + câble Jack auxiliaire
+- support voiture universel pour smartphone ou GPS
+-siège pour bébé
+"Diable" sur demande (selon disponibilité).
+
+Accueillant et respectueux, je serais ravi de louer mon véhicule à des locataires attachés aux valeurs de Drivy: confiance, partage et courtoisie.
+
+Bien cordialement."
+,gaz_consumption: "4"
+},
+
+{
+make: "Renault"
+,model: "Wind"
+,motorisation: "Essence"
+,gear_box: "Manuelle"
+,year: "2011"
+,category: "Cabriolet"
+,seats: 2
+,doors: "3"
+,user_id: 7
+,daily_rate: 20
+,description:
+"cabriolet 2 places en excellent état.
+Location par période de 15 jours souhaitée."
+,gaz_consumption: "7"
+},
+
+{
+make: "Peugeot"
+,model: "207"
+,motorisation: "Diesel"
+,gear_box: "Manuelle"
+,year: "2010"
+,category: "Citadine"
+,seats: 5
+,doors: "5"
+,user_id: 8
+,daily_rate: 28
+,description:
+"Excellent état général. Aucun problème particulier à signaler."
+,gaz_consumption: "5"
+},
+
+{
+make: "Renault"
+,model: "Modus 1.5 dCi 65 Confort Expression"
+,motorisation: "Diesel"
+,gear_box: "Manuelle"
+,year: "2005"
+,category: "Citadine"
+,seats: 5
+,doors: "5"
+,user_id: 9
+,daily_rate: 23
+,description:
+"Voiture bien entretenue, l'intérieur est assez propre.
+Bénéficiant de la climatisation et étant très modulable, elle est spacieuse et compacte et donc idéale pour les petites familles.
+Elle dispose du stationnement résidentiel dans 4 zones du 15ème arrondissement."
+,gaz_consumption: "6"
+},
+
+{
+make: "Peugeot"
+,model: "208"
+,motorisation: "Essence"
+,gear_box: "Manuelle"
+,year: "2012"
+,category: "Citadine"
+,seats: 5
+,doors: "5"
+,user_id: 10
+,daily_rate: 35
+,description:
+"Bien entretenue - dort en parking fermé"
+,gaz_consumption: "5"
+},
+
+{
+make: "Mercedes"
+,model: "Vito"
+,motorisation: "Diesel"
+,gear_box: "Manuelle"
+,year: "2012"
+,category: "Minibus"
+,seats: 9
+,doors: "4"
+,user_id: 11
+,daily_rate: 59
+,description:
+"Véhicule en très bon état, mécanique et carrosserie. Entretien régulier.
+Pour éviter les bouchons, possibilité de location d'un GPS info trafic, pour 10€/location"
+,gaz_consumption: "8"
+},
+
+{
+make: "Citroën"
+,model: "C4 Coupé VTS 180cv"
+,motorisation: "Essence"
+,gear_box: "Manuelle"
+,year: "2007"
+,category: "Coupé"
+,seats: 5
+,doors: "3"
+,user_id: 12
+,daily_rate: 40
+,description:
+"Amis automobilistes Bonjour !
+Bonne routière sportive et confortable avec toit panoramique, vous prendrez plaisir à conduire ma voiture pour vos virées à la campagne ou juste pour vos expéditions à IKEA ;)
+
+Je travaille depuis chez moi et suis donc très flexible sur les horaires, même à la dernière minute.
+
+Lieu de RDV: Quartier Faidherbe-Chaligny / Charonne / Reuilly-Diderot
+Au besoin, je peux vous déposer et/ou reprendre la voiture à Gare de Lyon pour faciliter vos déplacements.
+
+à très vite !
+Adélaïde"
+,gaz_consumption: "8"
+},
+
+{
+make: "Renault"
+,model: "Espace IV"
+,motorisation: "Diesel"
+,gear_box: "Manuelle"
+,year: "2003"
+,category: "Familiale"
+,seats: 7
+,doors: "5"
+,user_id: 13
+,daily_rate: 40
+,description:
+"Bon état général. Contrôle technique récent.
+Pneus Michelin neufs.
+Autoradio. Boitier pour 6 CD.
+Grand coffre. 5 sièges arrières amovibles. Barres de toit permanentes."
+,gaz_consumption: "11"
+},
+
+{
+make: "Citroën"
+,model: "C3 1.6i 16v 110cv"
+,motorisation: "Essence"
+,gear_box: "Manuelle"
+,year: "2003"
+,category: "Citadine"
+,seats: 5
+,doors: "5"
+,user_id: 14
+,daily_rate: 30
+,description:
+""
+,gaz_consumption: "7"
+},
+
+{
+make: "Renault"
+,model: "Grand Scenic 136cv"
+,motorisation: "Diesel"
+,gear_box: "Manuelle"
+,year: "2013"
+,category: "Familiale"
+,seats: 5
+,doors: "5"
+,user_id: 15
+,daily_rate: 50
+,description:
+"Voiture en excellent état . Kit main libre / bluetooth"
+,gaz_consumption: "6"
+},
+
+{
+make: "Peugeot"
+,model: "206+"
+,motorisation: "Essence"
+,gear_box: "Manuelle"
+,year: "2013"
+,category: "Citadine"
+,seats: 5
+,doors: "5"
+,user_id: 16
+,daily_rate: 33
+,description:
+""
+,gaz_consumption: "7"
+},
+
+{
+make: "Peugeot"
+,model: "307"
+,motorisation: "Essence"
+,gear_box: "Manuelle"
+,year: "2001"
+,category: "Berline"
+,seats: 5
+,doors: "3"
+,user_id: 17
+,daily_rate: 30
+,description:
+""
+,gaz_consumption: "5"
+},
+
+{
+make: "Peugeot"
+,model: "Boxer 1.9D"
+,motorisation: "Diesel"
+,gear_box: "Manuelle"
+,year: "1998"
+,category: "Utilitaire"
+,seats: 3
+,doors: "4"
+,user_id: 18
+,daily_rate: 30
+,description:
+"Camion pouvant servir pour un déménagement ou autre.
+Porte latérale enfoncée sur le bas mais n empêchant en aucun cas sa fonctionnalité.
+Plancher bois.
+Sur demande, possibilité se prêt d'un diable."
+,gaz_consumption: "7"
+},
+
+]
+
+cars_array.each do |car|
+  Car.create(car)
+end
+
+reviews_array = [
+]
+
+
