@@ -5,6 +5,10 @@
   <span class="card-text">
     <h2><%= car.make %></h2>
     <p><%= car.model %></p>
+    <p><%= car.motorisation %></p>
+  </span>
+  <span class="card-price">
+    <%= car.daily_rate.to_i %><span class="card-price-day">€ / jour</span>
   </span>
   <span class="card-user">
     <img src='user.jpg' class="avatar avatar-bordered"/>

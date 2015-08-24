@@ -27,6 +27,18 @@
     top: 10px;
     left: 10px;
   }
+  &-price {
+    position: absolute;
+    right: 0;
+    bottom: 20px;
+    padding: 12px;
+    line-height: 10px;
+
+    background-color: $brand-color;
+    &-day {
+      font-size: 10px;
+    }
+  }
   &-text {
     position: absolute;
     bottom: 10px;
