@@ -1,0 +1,29 @@
+.search-results {
+    position: relative;
+    box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+    transition: all 0.3s ease;
+
+  &-list-container {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: 20px;
+    background-color: blue;
+
+  }
+
+  &-map {
+    position: fixed;
+    backround-color: yellow;
+    z-index: 1;
+
+    & iframe {
+      width: 40vw;
+      height: 110vh;
+
+
+
+    }
+  }
+
+}
