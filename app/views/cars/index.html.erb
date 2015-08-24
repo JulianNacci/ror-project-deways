@@ -1,0 +1,5 @@
+<% @cars.each do |car| %>
+  <div class="col-xs-12 col-sm-4">
+    <%= render 'shared/car_card', car: car %>
+  </div>
+<% end %>
