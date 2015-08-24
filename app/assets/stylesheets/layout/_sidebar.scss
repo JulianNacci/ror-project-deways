@@ -8,10 +8,6 @@
   font-size:20px;
 }
 
-.main-menu:hover {
-  width:250px;
-  overflow:visible;
-}
 
 .main-menu {
   background:#fbfbfb;
@@ -21,11 +17,6 @@
   bottom:0;
   height:100%;
   left:0;
-  width:60px;
-  overflow:hidden;
-  -webkit-transition:width .05s linear;
-  transition:width .05s linear;
-  -webkit-transform:translateZ(0) scale(1,1);
   z-index:1000;
 }
 
@@ -36,7 +27,7 @@
 .main-menu li {
   position:relative;
   display:block;
-  width:250px;
+  width:150px;
 }
 
 .main-menu li>a {
@@ -47,9 +38,7 @@
   color:#999;
   font-size: 14px;
   text-decoration:none;
-  -webkit-transform:translateZ(0) scale(1,1);
-  -webkit-transition:all .1s linear;
-  transition:all .1s linear;
+
 }
 
 .main-menu .nav-icon {
@@ -77,14 +66,6 @@
 
 a:hover,a:focus {
   text-decoration:none;
-}
-
-nav {
-  -webkit-user-select:none;
-  -moz-user-select:none;
-  -ms-user-select:none;
-  -o-user-select:none;
-  user-select:none;
 }
 
 nav ul,nav li {
