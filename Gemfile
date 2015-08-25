@@ -15,6 +15,7 @@ gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'devise'
+gem 'bootstrap-datepicker-rails', '~> 1.4.0'
 
 group :development, :test do
   gem 'binding_of_caller'
