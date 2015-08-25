@@ -1,23 +1,13 @@
 <div class="spacer"></div>
 <div class="container">
 
-<%= link_to "Back", cars_path, class: "btn btn-danger" %>
-
-<%= render "bookings/shared/newform",car: @car, booking: @booking %>
-
-
-  <div class="col-xs-12">
-    <div class="car-details-title-container">
-      <h1><%= @car.make %> <%= @car.model %></h1>
-      <p><%= @car.year %>, moteur <%= @car.motorisation %></p>
-    </div>
-  </div>
-  <div class="col-xs-12 col-sm-9">
+<!-- FIRST COLUMN -->
+  <div class="col-xs-12 col-sm-8 no-padding">
     <div class="car-details-picture-container">
       <div class="banner text-center" style="background-image: url('<%= @car.picture %> ')">
         <div class="banner-shadow"></div>
         <div class="banner-content">
-          <h1>Some Stuff</h1>
+          <h1><%= @car.make %> <%= @car.model %></h1>
           <p>Very cool stuff, useful and smart</p>
           <a class="btn btn-primary btn-lg">GET IT</a>
         </div>
@@ -135,22 +125,24 @@
     </div>
   </div>
 
-  <div class="col-xs-12 col-sm-3">
-
+<!-- SECOND COLUMN -->
+  <div class="col-xs-12 col-sm-4 no-padding">
+  <%= simple_form_for [@car, @booking] do |f|%>
     <div class="box-booking-container">
       <h3>Date de début</h3>
       <div class="box-booking-date">
-        INPUT DEBUT
+        <%= f.input :checkin_date, :input_html => { data: {provide: "datepicker"}}, label: false %>
       </div>
       <h3>Date de fin</h3>
       <div class="box-booking-date">
-        INPUT FIN
+        <%= f.input :checkout_date, :input_html => { data: {provide: "datepicker"}}, label: false %>
       </div>
       <h3>Kilométrage estimé</h3>
       <div class="box-booking-kilometer">
-        INPUT KM
+        <%= f.input :distance, label: false %>
       </div>
     </div>
+
 
     <div class="box-price-container">
       <div class="box-price-price text-center">
@@ -158,9 +150,9 @@
       </div>
     </div>
     <div class="box-price-booking-btn text-center">
-      <a href="" class="btn btn-danger">Envoyer une demande</a>
+      <%= f.button :submit, "Send a request", class:"btn btn-danger" %>
     </div>
-
+    <% end %>
 
   </div>
 </div>

@@ -1,25 +1,38 @@
 
 <div class="card-container">
-
   <div class="card">
   <%= link_to car_path(car) do %>
   <span class="card-link"></span>
     <span class="card-bg" style="background-image: url('<%= car.picture %> ')"></span>
     <span class="card-shadow"></span>
-    <span class="card-description">Popular</span>
+    <!-- <span class="card-description">Popular</span> -->
     <span class="card-text">
       <h2><%= car.make %> <%= car.model %></h2>
       <p><%= car.motorisation %> - <%= car.seats %> seats</p>
     </span>
-    <span class="card-user">
-      <ul class="list-inline">
-        <li><p><%= car.user.first_name %> <%= car.user.last_name.first %>.</p></li>
-        <li><%= image_tag car.user.picture.url(:thumb), class:"avatar avatar-bordered"%></li>
-      </ul>
-    </span>
   <% end %>
   </div>
+  <span class="card-user">
+    <ul class="list-inline">
+      <li><p><%= car.user.first_name %> <%= car.user.last_name.first %>.</p></li>
+      <li><%= image_tag car.user.picture.url(:thumb), class:"avatar avatar-large avatar-xl-bordered"%></li>
+    </ul>
+  </span>
   <span class="card-price">
       <%= car.daily_rate.to_i %>€<span class="card-price-day"> / jour</span>
   </span>
+
+  <span class="ratings">
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star"></i>
+      <i class="fa fa-star-half-o"></i>
+      <i class="fa fa-star-o"></i>
+  </span>
+  <span class="ratings ratings-count">
+      <%= "(16)" %>
+  </span>
+
+
+
 </div>
