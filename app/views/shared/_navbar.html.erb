@@ -1,9 +1,9 @@
 <nav class="navbar-wagon navbar-wagon-fixed">
   <div class="container navbar-wagon-container">
 
-    <a href="">
+    <%= link_to cars_path do %>
       <%= image_tag "logo.png", class:"navbar-wagon-logo"%>
-    </a>
+    <% end %>
 
     <!-- <form action="" class="navbar-wagon-search">
       <input type="text" class="navbar-wagon-search-input" placeholder="Search for featured stuff">
@@ -46,6 +46,6 @@
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
     <hr>
-    <%= link_to t(".top_call_to_action", default: "Louer votre voiture"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
+    <%= link_to t(".top_call_to_action", default: "Ajouter une voiture"), new_car_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
   </div>
 </nav>
