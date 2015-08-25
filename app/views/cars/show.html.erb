@@ -1,6 +1,9 @@
 <div class="spacer"></div>
 <div class="container">
 
+<%= link_to "Back", cars_path, class: "btn btn-danger" %>
+
+<%= render "bookings/shared/newform",car: @car, booking: @booking %>
 
 
   <div class="col-xs-12">

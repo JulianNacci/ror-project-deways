@@ -7,6 +7,7 @@ class CarsController < ApplicationController
 
   def show
     @addresss = Address.all
+    @booking = Booking.new
   end
 
   def new
