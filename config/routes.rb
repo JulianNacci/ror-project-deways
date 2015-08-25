@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :cars
+  resources :bookings
   # only: [:index, :show, :update, :edit, :new]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
