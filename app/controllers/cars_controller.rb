@@ -19,6 +19,7 @@ class CarsController < ApplicationController
 
   def update
     @car.update(car_params)
+    redirect_to car_path(@car)
   end
 
   def create
