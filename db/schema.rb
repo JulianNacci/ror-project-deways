@@ -13,6 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20150825123111) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -57,6 +58,7 @@ ActiveRecord::Schema.define(version: 20150825123111) do
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
+    t.boolean  "available"
   end
 
   add_index "cars", ["user_id"], name: "index_cars_on_user_id", using: :btree

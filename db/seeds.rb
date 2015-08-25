@@ -23,7 +23,8 @@ daily_rate: 25,
 description: "Véhicule très agréable a conduire, bonne tenue de route. Coffre spacieux idéal pour vacances ou week end en province. Faible consommation de carburant, et propreté intérieure garantie.
 Éraflures très légères en extérieur, très bon entretien intérieur.
 Si vous souhaitez profiter de la robustesse et du confort Volswagen a petit prix, n'hésitez pas a me contacter. Échanges cordiaux et respectueux.",
-gaz_consumption: "4"
+gaz_consumption: "4",
+available: true
 },
 
 {
@@ -39,7 +40,8 @@ picture: File.new('app/assets/images/seed/2/1.jpeg'),
 doors: "5",
 daily_rate: 36,
 description: "",
-gaz_consumption: "7"
+gaz_consumption: "7",
+available: true
 },
 
 {
@@ -66,7 +68,8 @@ Lundi à Jeudi : 16h à 21h
 Vendredi : 16h à 22h
 Samedi : 8h à 12h et 18h à 22h
 Dimanche : 18h à 00h",
-gaz_consumption: "7"
+gaz_consumption: "7",
+available: true
 },
 
 {
@@ -82,7 +85,8 @@ picture: File.new('app/assets/images/seed/4/1.jpeg'),
 doors: "5",
 daily_rate: 59,
 description: "",
-gaz_consumption: "8"
+gaz_consumption: "8",
+available: true
 },
 
 {
@@ -98,7 +102,8 @@ picture: File.new('app/assets/images/seed/5/1.jpeg'),
 doors: "5",
 daily_rate: 24,
 description: "Arrangement possible pour une prise en charge et une restitution du véhicule à la gare SNCF ou l'aéropor",
-gaz_consumption: "5"
+gaz_consumption: "5",
+available: true
 },
 
 {
@@ -114,7 +119,8 @@ picture: File.new('app/assets/images/seed/6/1.jpeg'),
 doors: "5",
 daily_rate: 9,
 description: "A",
-gaz_consumption: "4"
+gaz_consumption: "4",
+available: true
 },
 
 {
@@ -131,7 +137,8 @@ doors: "3",
 daily_rate: 20,
 description: "cabriolet 2 places en excellent état.
 Location par période de 15 jours souhaitée.",
-gaz_consumption: "7"
+gaz_consumption: "7",
+available: true
 },
 
 {
@@ -147,7 +154,8 @@ picture: File.new('app/assets/images/seed/8/1.jpeg'),
 doors: "5",
 daily_rate: 28,
 description: "Excellent état général. Aucun problème particulier à signaler.",
-gaz_consumption: "5"
+gaz_consumption: "5",
+available: true
 },
 
 {
@@ -165,7 +173,8 @@ daily_rate: 23,
 description: "Voiture bien entretenue, l'intérieur est assez propre.
 Bénéficiant de la climatisation et étant très modulable, elle est spacieuse et compacte et donc idéale pour les petites familles.
 Elle dispose du stationnement résidentiel dans 4 zones du 15ème arrondissement.",
-gaz_consumption: "6"
+gaz_consumption: "6",
+available: true
 },
 
 {
@@ -182,7 +191,8 @@ doors: "5",
 daily_rate: 35,
 description:"
 Bien entretenue - dort en parking fermé",
-gaz_consumption: "5"
+gaz_consumption: "5",
+available: true
 },
 
 {
@@ -199,7 +209,8 @@ doors: "4",
 daily_rate: 59,
 description: "Véhicule en très bon état, mécanique et carrosserie. Entretien régulier.
 Pour éviter les bouchons, possibilité de location d'un GPS info trafic, pour 10€/location",
-gaz_consumption: "8"
+gaz_consumption: "8",
+available: true
 },
 
 {
@@ -224,7 +235,8 @@ Au besoin, je peux vous déposer et/ou reprendre la voiture à Gare de Lyon pour
 
 à très vite !
 Adélaïde",
-gaz_consumption: "8"
+gaz_consumption: "8",
+available: true
 },
 
 {
@@ -243,7 +255,8 @@ description: "Bon état général. Contrôle technique récent.
 Pneus Michelin neufs.
 Autoradio. Boitier pour 6 CD.
 Grand coffre. 5 sièges arrières amovibles. Barres de toit permanentes.",
-gaz_consumption: "11"
+gaz_consumption: "11",
+available: true
 },
 
 {
@@ -259,7 +272,8 @@ picture: File.new('app/assets/images/seed/14/1.jpeg'),
 doors: "5",
 daily_rate: 30,
 description: "",
-gaz_consumption: "7"
+gaz_consumption: "7",
+available: true
 },
 
 {
@@ -275,7 +289,8 @@ picture: File.new('app/assets/images/seed/15/1.jpeg'),
 doors: "5",
 daily_rate: 50,
 description: "Voiture en excellent état . Kit main libre / bluetooth",
-gaz_consumption: "6"
+gaz_consumption: "6",
+available: true
 },
 
 {
@@ -291,7 +306,8 @@ picture: File.new('app/assets/images/seed/16/1.jpeg'),
 doors: "5",
 daily_rate: 33,
 description: "",
-gaz_consumption: "7"
+gaz_consumption: "7",
+available: true
 },
 
 {
@@ -307,7 +323,8 @@ picture: File.new('app/assets/images/seed/17/1.jpg'),
 doors: "3",
 daily_rate: 30,
 description: "",
-gaz_consumption: "5"
+gaz_consumption: "5",
+available: true
 },
 
 {
@@ -326,7 +343,8 @@ description: "Camion pouvant servir pour un déménagement ou autre.
 Porte latérale enfoncée sur le bas mais n empêchant en aucun cas sa fonctionnalité.
 Plancher bois.
 Sur demande, possibilité se prêt d'un diable.",
-gaz_consumption: "7"
+gaz_consumption: "7",
+available: true
 },
 
 ]
