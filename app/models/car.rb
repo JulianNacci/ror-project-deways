@@ -5,7 +5,8 @@ class Car < ActiveRecord::Base
   validates_attachment_content_type :picture,
     content_type: /\Aimage\/.*\z/
 
+  validates_presence_of :user_id
   belongs_to :user
-  has_many :address
+  has_many :addresses
   has_many :bookings
 end

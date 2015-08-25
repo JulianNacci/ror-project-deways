@@ -112,7 +112,7 @@ seats: 2,
 user_id: 1,
 picture: File.new('app/assets/images/seed/6/1.jpeg'),
 doors: "5",
-daily_rate: 30,
+daily_rate: 9,
 description: "A",
 gaz_consumption: "4"
 },
