@@ -7,6 +7,6 @@ class Car < ActiveRecord::Base
 
   validates_presence_of :user_id
   belongs_to :user
-  has_many :addresses
-  has_many :bookings
+  has_many :addresses, dependent: :destroy
+  has_many :bookings, dependent: :destroy
 end

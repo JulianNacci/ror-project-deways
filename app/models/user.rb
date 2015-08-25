@@ -15,6 +15,6 @@ class User < ActiveRecord::Base
   # validates_presence_of :last_name
   # validates_presence_of :address
   # validates_presence_of :phone_number
-  has_many :bookings
-  has_many :cars
+  has_many :bookings, dependent: :destroy
+  has_many :cars, dependent: :destroy
 end
