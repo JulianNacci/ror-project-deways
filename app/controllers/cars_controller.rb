@@ -9,7 +9,7 @@ class CarsController < ApplicationController
   end
 
   def new
-
+    @car = Car.new
   end
 
   def edit
@@ -18,6 +18,11 @@ class CarsController < ApplicationController
 
   def update
     @car.update(car_params)
+  end
+
+  def create
+    @car = Car.new(car_params)
+    @car.save ? (redirect_to car_path(@car)) : (render 'new')
   end
 
   def destroy
