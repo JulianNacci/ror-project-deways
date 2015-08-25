@@ -11,9 +11,21 @@ class CarsController < ApplicationController
   end
 
   def new
-    @car = Car.new
+    if user_signed_in?
+      @car = Car.new
+
+    else
+      redirect_to new_user_session_path
+    end
   end
 
+  def create
+    @car = Car.new(car_params)
+    @user = User.find(current_user.id)
+    @car.user = @user
+    @address = Address.new
+    @car.save ? (redirect_to car_path(@car)) : (render 'new')
+  end
   def edit
 
   end
@@ -23,11 +35,6 @@ class CarsController < ApplicationController
     redirect_to car_path(@car)
   end
 
-  def create
-    @car = Car.new(car_params)
-    @address = Address.new
-    @car.save ? (redirect_to car_path(@car)) : (render 'new')
-  end
 
   def destroy
     @car.destroy
@@ -42,4 +49,8 @@ class CarsController < ApplicationController
   def car_params
     params.require(:car).permit(:make, :model, :motorisation, :category, :seats, :daily_rate, :description, :year, :gear_box, :doors, :gaz_consumption, :picture)
   end
+
+  def set_user
+  end
+
 end
