@@ -1,4 +1,6 @@
 class BookingsController < ApplicationController
+  before_action :set_car, only: [:new, :create]
+
   def index
   end
   def show
@@ -15,4 +17,11 @@ class BookingsController < ApplicationController
   end
   def destroy
   end
+
+  private
+
+  def set_car
+    @car = Car.find(params[:car_id])
+  end
+
 end
