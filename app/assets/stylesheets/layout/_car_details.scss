@@ -1,0 +1,78 @@
+.car-details {
+  &-title-container {
+
+  }
+
+  &-picture-container {
+
+  }
+
+  &-map-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    & iframe {
+      height: 200px;
+      width: 100%;
+    }
+  }
+
+  &-description-container {
+    h3 {
+      font-size: 18px;
+      margin-top: 20px;
+      color: $brand-color;
+      text-transform: uppercase;
+    }
+
+    td {
+
+      width: 50%;
+    }
+  }
+}
+
+.box {
+
+
+  &-booking {
+    &-container {
+      background-color: $gray-lighter;
+      padding: 20px;
+      color: $gray-dark;
+
+      & h3 {
+        font-size: 18px;
+      }
+    }
+
+    &-date {
+
+    }
+
+    &-kilometer {
+
+    }
+  }
+  &-price {
+    &-container {
+      margin-top: 20px;
+      background-color: $brand-color;
+      padding: 20px;
+      color: white;
+    }
+
+    &-price {
+      font-size: 15px;
+      & span {
+        font-size: 35px;
+      }
+    }
+
+    &-booking-btn {
+      margin-top: 20px;
+      width: 100%;
+    }
+  }
+}
+
