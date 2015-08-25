@@ -2,7 +2,7 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-4 col-xs-offset-4">
-      <%= simple_form_for booking do |f|%>
+      <%= simple_form_for [car, booking] do |f|%>
         <%= f.input :checkin_date %>
         <%= f.input :checkout_date %>
         <%= f.button :submit, class:"btn btn-primary" %>

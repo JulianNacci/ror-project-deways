@@ -1,15 +1,23 @@
 class BookingsController < ApplicationController
-  before_action :set_car, only: [:new, :create]
+  before_action :set_car, only: [:create]
 
-  def index
-  end
-  def show
-  end
-  def new
-    #GET sur la page cars#show
-  end
   def create
     #POST sur la page cars#show
+    if user_signed_in?
+      @booking = Booking.new
+      @booking.car_id = @car.id
+      @booking.user_id = current_user.id
+
+      @booking.save ? (redirect_to pages_home_path) : ( raise render 'cars/show')
+      # if @booking.save
+      #   redirect_to pages_home_path
+      # else
+      #   raise
+      #   render 'cars/show'
+      # end
+    else
+      redirect_to new_user_session_path
+    end
   end
   def edit
   end

@@ -2,3 +2,5 @@
 <h2><%= @car.model %></h2>
 
 <%= link_to "Back", cars_path, class: "btn btn-danger" %>
+
+<%= render "bookings/shared/newform",car: @car, booking: @booking %>
