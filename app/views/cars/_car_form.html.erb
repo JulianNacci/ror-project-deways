@@ -1,0 +1,13 @@
+<%= simple_form_for @car do |f| %>
+  <%= f.input :make %>
+  <%= f.input :model %>
+  <%= f.input :motorization %>
+  <%= f.input :gaz_consumption %>
+  <%= f.input :gear_box %>
+  <%= f.input :seats %>
+  <%= f.input :doors %>
+  <%= f.input :description %>
+  <%= f.input :picture %>
+
+  <%= f.button :submit, class:"btn btn-danger" %>
+<% end %>
