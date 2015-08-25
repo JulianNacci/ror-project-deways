@@ -61,8 +61,10 @@
     position: absolute;
     bottom: 10px;
     left: 10px;
+    right: 100px;
     h2 {
-      font-size: 24px;
+      font-size: 22px;
+      margin-bottom: 5px;
     }
     p {
       font-size: 13px;
@@ -70,6 +72,7 @@
   }
   &-user {
     position: absolute;
+    display: inline;
     right: 10px;
     top: 10px;
   }

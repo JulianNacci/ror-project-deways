@@ -8,13 +8,14 @@
     <span class="card-shadow"></span>
     <span class="card-description">Popular</span>
     <span class="card-text">
-      <h2><%= car.make %></h2>
-      <p><%= car.model %></p>
-      <p><%= car.motorisation %></p>
+      <h2><%= car.make %> <%= car.model %></h2>
+      <p><%= car.motorisation %> - <%= car.seats %> seats</p>
     </span>
     <span class="card-user">
-    <p><%= "Julian" %> <%= "N" %>.</p>
-      <img src='user.jpg' class="avatar avatar-bordered"/>
+      <ul class="list-inline">
+        <li><p><%= car.user.first_name %> <%= car.user.last_name.first %>.</p></li>
+        <li><%= image_tag car.user.picture.url(:thumb), class:"avatar avatar-bordered"%></li>
+      </ul>
     </span>
   <% end %>
   </div>
