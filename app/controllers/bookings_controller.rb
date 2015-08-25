@@ -9,12 +9,7 @@ class BookingsController < ApplicationController
       @booking.user_id = current_user.id
 
       @booking.save ? (redirect_to pages_home_path) : ( raise render 'cars/show')
-      # if @booking.save
-      #   redirect_to pages_home_path
-      # else
-      #   raise
-      #   render 'cars/show'
-      # end
+
     else
       redirect_to new_user_session_path
     end

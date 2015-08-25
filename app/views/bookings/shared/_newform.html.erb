@@ -5,6 +5,7 @@
       <%= simple_form_for [car, booking] do |f|%>
         <%= f.input :checkin_date %>
         <%= f.input :checkout_date %>
+        <%= f.input :distance %>
         <%= f.button :submit, class:"btn btn-primary" %>
       <% end %>
     </div>
