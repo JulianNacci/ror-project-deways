@@ -1,4 +1,63 @@
-<h1><%= @car.make %></h1>
-<h2><%= @car.model %></h2>
+<div class="spacer"></div>
+<div class="container">
 
-<%= link_to "Back", cars_path, class: "btn btn-danger" %>
+
+
+  <div class="col-xs-12 col-sm-8">
+    <div class="car-title-container">
+      <h1><%= @car.make %> <%= @car.model %></h1>
+      <p><%= @car.year %>, moteur <%= @car.motorisation %></p>
+    </div>
+
+    <div class="car-picture-container">
+      <div class="banner text-center" style="background-image: url('<%= @car.picture %> ')">
+        <div class="banner-shadow"></div>
+        <div class="banner-content">
+          <h1>Some Stuff</h1>
+          <p>Very cool stuff, useful and smart</p>
+          <a class="btn btn-primary btn-lg">GET IT</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+    <div class="col-xs-12 col-sm-4">
+
+    <div class="booking-box-container">
+      <p>Dates</p>
+      <div class="booking-box-date">
+        INPUT DEBUT
+      </div>
+      <div class="booking-box-date">
+        INPUT FIN
+      </div>
+      <p>Kilométrage estimé</p>
+      <div class="booking-box-kilometer">
+        INPUT KM
+      </div>
+    </div>
+
+    <div class="price-box-container">
+      <div class="price-box-price">
+        <%= @car.daily_rate.to_i %>€
+      </div>
+      <p>Prix / jour</p>
+      <div class="price-box-booking-btn">
+        <a href="" class="btn btn-danger">Envoyer une demande</a>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+
+  <% if current_user == @car.user %>
+    <%= link_to "Edit", edit_car_path(@car), class: "btn btn-info" %>
+  <% end %>
+
+  <%= link_to "Back", cars_path, class: "btn btn-danger" %>
+
+</div>
