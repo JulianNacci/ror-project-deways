@@ -6,6 +6,7 @@ class CarsController < ApplicationController
   end
 
   def show
+    @addresss = Address.all
   end
 
   def new
@@ -18,10 +19,12 @@ class CarsController < ApplicationController
 
   def update
     @car.update(car_params)
+    redirect_to car_path(@car)
   end
 
   def create
     @car = Car.new(car_params)
+    @address = Address.new
     @car.save ? (redirect_to car_path(@car)) : (render 'new')
   end
 
