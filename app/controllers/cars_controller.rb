@@ -23,7 +23,7 @@ class CarsController < ApplicationController
     @user = User.find(current_user.id)
     @car.user = @user
     @address = Address.new
-    @car.save ? (redirect_to pages_home_path) : (render 'new')
+    @car.save ? (redirect_to car_path(@car)) : (render 'new')
   end
   def edit
 
