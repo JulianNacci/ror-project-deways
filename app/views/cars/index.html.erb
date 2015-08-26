@@ -1,4 +1,14 @@
+<%= content_for(:title) do %>
+  <% if @page_title %>
+  Cars in <%= @page_title%>
+  <% else %>
+  All cars
+  <% end %>
+<%= content_for(:description) do %>
+  bla bla bla
+<% end %>
 
+<% end %>
 <div class="search-results">
   <div class="search-results-list-container col-xs-12 col-sm-7">
     <div class="container-fluid no-padding">

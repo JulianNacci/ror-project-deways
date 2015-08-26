@@ -3,11 +3,17 @@ class CarsController < ApplicationController
 
   def index
     if params[:search]
-      @address = Address.near(params[:search], 5)
+      @page_title = params[:search]
+      @addresses = Address.near(params[:search], 5)
       @cars = []
-      @address.each do |a|
-        @car = Car.find(a.car_id)
-        @cars.push(@car)
+
+      # Get rid of the addresses that have several pick up spot for the same car
+      #we get an array containing all the unique car_id
+      unique_car_id = @addresses.map{|t| t.car_id}.uniq
+      # We need to find the car associated
+      unique_car_id.each do |car_id|
+        car = Car.find(car_id)
+        @cars.push(car)
       end
     else
       @cars = Car.all
