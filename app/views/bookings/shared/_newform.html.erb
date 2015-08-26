@@ -1,0 +1,13 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-4 col-xs-offset-4">
+      <%= simple_form_for [car, booking] do |f|%>
+        <%= f.input :checkin_date, :input_html => { data: {provide: "datepicker"}} %>
+        <%= f.input :checkout_date, :input_html => { data: {provide: "datepicker"}} %>
+        <%= f.input :distance %>
+        <%= f.button :submit, class:"btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>

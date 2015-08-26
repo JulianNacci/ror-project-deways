@@ -1,0 +1,15 @@
+.ratings {
+  color: $brand-color;
+  font-size: 12px;
+  text-shadow: none;
+  letter-spacing: 0px;
+  margin-left: 10px;
+  & i {
+    font-size: 14px;
+    margin: -1px;
+  }
+
+  &-count {
+    margin-left: 5px;
+  }
+}
