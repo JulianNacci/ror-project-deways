@@ -2,7 +2,16 @@ class CarsController < ApplicationController
   before_action :set_car, only: [:show, :update, :edit, :destroy]
 
   def index
-    @cars = Car.all
+    if params[:search]
+      @address = Address.near(params[:search], 5)
+      @cars = []
+      @address.each do |a|
+        @car = Car.find(a.car_id)
+        @cars.push(@car)
+      end
+    else
+      @cars = Car.all
+    end
   end
 
   def show
