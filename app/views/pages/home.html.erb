@@ -1,8 +1,21 @@
-<div class="container text-center">
-  <div class="row">
-    <div class="col-xs-12">
-      <h1>DEWAYS</h1>
-      <p>Location de voiture entre particuliers</p>
+<div class="video-banner">
+
+  <div class="container-liquid wrapper">
+
+    <div class="col-xs-12 video-banner-content text-centered">
+      <h1>Location de voiture entre particuliers</h1>
+      <p class="text-centered">Cherchez parmi plus de 26 000 voitures et utilitaires de particuliers à louer dans toute la France</p>
+      <%= link_to "Rechercher", cars_path, class:"btn video-banner-btn" %>
     </div>
+
   </div>
+
+  <div class="video-banner-container">
+    <video autoplay muted poster="" id="bgvid" loop class="video-banner-video-fullscreen">
+      <source src='<%= video_path("bg_video.mp4") %>' type="video/mp4">
+      <source src='<%= video_path("bg_video.mp4") %>' type="video/webm">
+    </video>
+  </div>
+
+  <div class="video-banner-gradient"></div>
 </div>
