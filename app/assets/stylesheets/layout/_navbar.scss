@@ -75,19 +75,19 @@
     position: absolute;
     margin: 14px;
     right: 0;
-    margin-left: 10px;
+
     padding: 0 20px;
     border-radius: 20em;
     line-height: 40px;
-    background-color: #D23333;
+    background-color: $brand-color;
     color: white;
     font-size: 14px;
-    border: 2px solid $brand-color;
+    border: 2px solid #D23333;
 
     &:hover {
       color: white;
-      background: $brand-color;
-      border-color: darken($brand-color, 10%);
+      background: darken($brand-color, 10%);
+      border-color: $brand-color;
     }
   }
   &-dropdown-menu {
