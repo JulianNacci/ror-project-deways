@@ -3,13 +3,21 @@
   background: white;
   transition: all 0.3s ease;
 
+  &-username {
+    font-weight: lighter !important;
+    font-size: 14px;
+    margin-right: 15px;
+  }
+
   &-fixed {
     position: fixed;
     z-index: 3;
     width: 100%;
   }
   &-logo {
-    width: 250px;
+    height: 100px;
+    margin: 10px 0px;
+    z-index: 20;
 
 
   }
