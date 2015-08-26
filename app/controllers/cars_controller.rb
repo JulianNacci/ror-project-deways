@@ -3,6 +3,7 @@ class CarsController < ApplicationController
 
   def index
     if params[:search]
+      @page_title = params[:search]
       @addresses = Address.near(params[:search], 5)
       @cars = []
 
