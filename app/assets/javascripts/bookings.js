@@ -2,5 +2,12 @@
 // All this logic will automatically be available in application.js.
 
 $(document).ready(function(){
-  $('.date').datepicker({ format: 'dd-mm-yyyy'});
+  $('.datepicker').datepicker({
+    format: 'dd-mm-yyyy',
+    todayBtn: true,
+    clearBtn: true,
+    language: "fr",
+    autoclose: true,
+    todayHighlight: true,
+  });
 });
