@@ -1,13 +1,20 @@
 class BookingsController < ApplicationController
-  before_action :set_car, only: [:create]
+  before_action :set_car, only: [:show, :create]
+
+  def show
+
+  end
 
   def create
     #POST sur la page cars#show
     if user_signed_in?
-      @booking = Booking.new
+      @booking = Booking.new(booking_params)
       @booking.car_id = @car.id
       @booking.user_id = current_user.id
-      @booking.save ? (redirect_to pages_home_path) : ( raise render 'cars/show')
+      @booking.save
+      @car.available = false
+      @car.save
+      redirect_to car_booking_path(@car,@booking)
     else
       redirect_to new_user_session_path
     end
@@ -23,6 +30,10 @@ class BookingsController < ApplicationController
 
   def set_car
     @car = Car.find(params[:car_id])
+  end
+
+  def booking_params
+    params.require(:booking).permit(:checkin_date, :checkout_date, :distance)
   end
 
 end
