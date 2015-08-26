@@ -1,31 +1,35 @@
+<div class="spacer-login"></div>
 <div class="text-center">
   <h2>Sign up</h2>
-  <hr>
+  <br>
 </div>
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-4 col-xs-offset-4">
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
+        <div class="col-xs-4 col-xs-offset-2">
           <%= f.input :first_name %>
           <%= f.input :last_name %>
           <%= f.input :phone_number %>
           <%= f.input :address, placeholder: '7 rue Dupont, 75001 Paris' %>
+        </div>
+
+        <div class="col-xs-4">
           <%= f.input :email, required: true, autofocus: true %>
           <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
           <%= f.input :password_confirmation, required: true %>
           <%= f.input :picture %>
-
-
-
-
-          <%= f.button :submit, "Sign up", class: 'btn btn-primary' %>
-
-      <% end %>
-
+        </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <%= f.button :submit, "Sign up", class: 'btn video-banner-btn' %>
+    </div>
+   <% end %>
+   <div class="col-xs-12 text-center">
       <%= render "devise/shared/links" %>
-
     </div>
   </div>
 </div>
+
