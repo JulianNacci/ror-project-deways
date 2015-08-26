@@ -2,11 +2,10 @@ class BookingsController < ApplicationController
   before_action :set_car, only: [:show, :create]
 
   def show
-
+    @booking = Booking.find(params[:id])
   end
 
   def create
-    #POST sur la page cars#show
     if user_signed_in?
       @booking = Booking.new(booking_params)
       @booking.car_id = @car.id
@@ -14,7 +13,7 @@ class BookingsController < ApplicationController
       @booking.save
       @car.available = false
       @car.save
-      redirect_to car_booking_path(@car,@booking)
+      redirect_to car_booking_path(@car, @booking)
     else
       redirect_to new_user_session_path
     end
