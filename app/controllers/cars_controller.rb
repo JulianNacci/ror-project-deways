@@ -2,7 +2,7 @@ class CarsController < ApplicationController
   before_action :set_car, only: [:show, :update, :edit, :destroy]
 
   def index
-    if params[:search]
+    if params[:search] != ''
       @page_title = params[:search]
       @addresses = Address.near(params[:search], 5)
       @cars = []
