@@ -15,8 +15,9 @@ gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'devise'
-gem 'bootstrap-datepicker-rails', '~> 1.4.0' #need to perform 'gem install bootstrap-datepicker-rails' in the shell
 gem 'geocoder'
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.15.35'
 
 group :development, :test do
   gem 'binding_of_caller'
