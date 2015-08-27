@@ -3,6 +3,7 @@ class CarsController < ApplicationController
 
   def index
     if params[:search] != ''
+
       @page_title = params[:search]
       @addresses = Address.near(params[:search], 5)
       @cars = []
@@ -13,11 +14,26 @@ class CarsController < ApplicationController
       # We need to find the car associated
       unique_car_id.each do |car_id|
         car = Car.find(car_id)
+
         @cars.push(car)
+      @markers = marker_map(@addresses)
       end
     else
       @cars = Car.all
+      @addresses =  []
+      @cars.each do |car|
+        car.addresses.each do |address|
+        @addresses.push(address)
+        end
+      end
+      @markers = marker_map(@addresses)
     end
+
+    # @markers = Gmaps4rails.build_markers(@addresses) do |address, marker|
+    #   marker.lat address.latitude
+    #   marker.lng address.longitude
+
+    # end
   end
 
   def show
@@ -66,6 +82,14 @@ class CarsController < ApplicationController
   end
 
   def set_user
+  end
+
+  def marker_map(elements)
+    markers = Gmaps4rails.build_markers(elements) do |element, marker|
+      marker.lat element.latitude
+      marker.lng element.longitude
+    end
+    return markers
   end
 
 end
