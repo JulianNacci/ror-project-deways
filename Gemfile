@@ -16,7 +16,16 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'devise'
 gem 'bootstrap-datepicker-rails', '~> 1.4.0' #need to perform 'gem install bootstrap-datepicker-rails' in the shell
+
+ #geocoding
 gem 'geocoder'
+gem "coffee-rails"
+gem "gmaps4rails"
+source 'https://rails-assets.org' do
+  gem "rails-assets-underscore"
+end
+
+
 
 gem "cocoon" #handle nested forms dynamic add and delete
 
