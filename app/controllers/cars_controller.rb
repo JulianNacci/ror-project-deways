@@ -6,32 +6,24 @@ class CarsController < ApplicationController
 
       @page_title = params[:search]
       @addresses = Address.near(params[:search], 5)
-      #raise
-      @cars1 = []
-
-      # Get rid of the addresses that have several pick up spot for the same car
-      #we get an array containing all the unique car_id
-
-      unique_car_id = @addresses.map{|t| t.car_id}.uniq
-
-      # We need to find the car associated
-
-      unique_car_id.each do |car_id|
-        car = Car.find(car_id)
-        @cars1.push(car)
-
-      end
-
+      @cars = delete_doubles(@addresses)
+      @markers = marker_map(@addresses)
     else
-      @cars1 = Car.all
-      find_car_address
+      @cars = Car.all
+      @addresses = find_car_address(@cars)
+      @markers = marker_map(@addresses)
     end
-     @q = Car.ransack(params[:q])
-    @cars2 = @q.result(distinct: true)
-    @cars =[]
-    @cars = @cars1 & @cars2
+    @q = Car.ransack(params[:q])
 
-    @markers = marker_map(@addresses)
+    if params[:q]
+      cars1 =[]
+      cars2 = @q.result(distinct: true)
+      cars1 = @cars & cars2
+      @cars = cars1
+
+      @addresses = find_car_address(@cars)
+      @markers = marker_map(@addresses)
+    end
   end
 
   def show
@@ -89,12 +81,30 @@ class CarsController < ApplicationController
     return markers
   end
 
-  def find_car_address
-    @addresses =  []
-      @cars1.each do |car|
+  def find_car_address(cars)
+    addresses =  []
+      cars.each do |car|
         car.addresses.each do |address|
-        @addresses.push(address)
+        addresses.push(address)
         end
       end
+    return addresses
+  end
+
+  def delete_doubles(array_addresses)
+
+    array_cars = []
+      # Get rid of the addresses that have several pick up spot for the same car
+      #we get an array containing all the unique car_id
+
+      unique_car_id = array_addresses.map{|t| t.car_id}.uniq
+
+      # We need to find the car associated
+
+      unique_car_id.each do |car_id|
+        car = Car.find(car_id)
+        array_cars.push(car)
+      end
+      return array_cars
   end
 end
