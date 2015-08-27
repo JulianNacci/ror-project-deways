@@ -15,7 +15,24 @@
 
 
   <div class="search-results-list-container col-xs-12 col-sm-7">
+  <%= search_form_for @q do |f| %>
 
+  <%= hidden_field_tag :search, @page_title %>
+
+  <%= f.label :seats %>
+  <%= f.select :seats_eq, options_for_select([['Select', ''], ['2'], ['3'], ['4'], ['5'], ['6']], :selected => :seats) %>
+  <%= f.label :motorisation %>
+  <%= f.select :motorisation_eq, options_for_select([['Select', ''], ['Essence'], ['Diesel'], ['gpl'], ['Hybride']], :selected => :motorisation) %>
+
+  <%= f.label :category %>
+  <%= f.select :category_eq, options_for_select([['Select', ''], ['Berline'], ['Citadine'], ['SUV'], ['4x4'], ['Utilitaire']], :selected => :motorisation) %>
+
+  <%= f.label :gear_box %>
+  <%= f.select :gear_box_eq, options_for_select([['Select', ''], ['Automatique'], ['Manuelle']], :selected => :motorisation) %>
+
+
+  <%= f.submit %>
+<% end %>
 
     <div class="container-fluid no-padding">
     <% @cars.each do |car| %>

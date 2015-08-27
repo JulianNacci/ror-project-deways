@@ -6,7 +6,8 @@ class CarsController < ApplicationController
 
       @page_title = params[:search]
       @addresses = Address.near(params[:search], 5)
-      @cars = []
+      #raise
+      @cars1 = []
 
       # Get rid of the addresses that have several pick up spot for the same car
       #we get an array containing all the unique car_id
@@ -17,12 +18,19 @@ class CarsController < ApplicationController
 
       unique_car_id.each do |car_id|
         car = Car.find(car_id)
-        @cars.push(car)
+        @cars1.push(car)
+
       end
+
     else
-      @cars = Car.all
+      @cars1 = Car.all
       find_car_address
     end
+     @q = Car.ransack(params[:q])
+    @cars2 = @q.result(distinct: true)
+    @cars =[]
+    @cars = @cars1 & @cars2
+
     @markers = marker_map(@addresses)
   end
 
@@ -83,7 +91,7 @@ class CarsController < ApplicationController
 
   def find_car_address
     @addresses =  []
-      @cars.each do |car|
+      @cars1.each do |car|
         car.addresses.each do |address|
         @addresses.push(address)
         end

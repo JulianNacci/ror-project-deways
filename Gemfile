@@ -25,6 +25,9 @@ source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
 end
 
+#filter search
+gem 'ransack'
+
 
 
 group :development, :test do
