@@ -14,8 +14,43 @@
 <div class="search-results">
 
 
-  <div class="search-results-list-container col-xs-12 col-sm-7">
+  <div class="search-results-list-container col-xs-12 col-sm-7  form-inline">
+    <%= search_form_for @q, :builder => SimpleForm::FormBuilder do |f| %>
+      <%= hidden_field_tag :search, @page_title %>
 
+    <span>
+      <%= f.label :seats %>
+      <%= f.select :seats_eq,  options_for_select([['Select', ''], ['2'], ['3'], ['4'], ['5'], ['6']], :selected => :seats) %>
+
+    </span>
+    <hr>
+
+    <span>
+      <%= f.label :motorisation %>
+      <%= f.select :motorisation_eq, options_for_select([['Select', ''], ['Essence'], ['Diesel'], ['gpl'], ['Hybride']], :selected => :motorisation) %>
+    </span>
+    <hr>
+    <span>
+      <%= f.label :category %>
+      <%= f.select :category_eq, options_for_select([['Select', ''], ['Berline'], ['Citadine'], ['SUV'], ['4x4'], ['Utilitaire']], :selected => :motorisation) %>
+
+    </span>
+    <hr>
+
+    <span>
+      <%= f.label :gear_box %>
+      <%= f.select :gear_box_eq, options_for_select([['Select', ''], ['Automatique'], ['Manuelle']], :selected => :motorisation) %>
+    </span>
+    <hr>
+    <span>
+      <%= f.label :daily_price %>
+      <%= f.select :daily_rate_eq, options_for_select([['Select', ''], [10], [25]], :selected => :daily_rate) %>
+    </span>
+    <hr>
+    <span>
+      <%= f.button :submit, class: 'btn btn-primary' %>
+    </span>
+    <% end %>
 
     <div class="container-fluid no-padding">
     <% @cars.each do |car| %>

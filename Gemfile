@@ -25,6 +25,9 @@ source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
 end
 
+#filter search
+gem 'ransack'
+
 
 
 gem "cocoon" #handle nested forms dynamic add and delete
