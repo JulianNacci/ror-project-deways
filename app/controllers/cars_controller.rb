@@ -84,9 +84,7 @@ class CarsController < ApplicationController
   def find_car_address(cars)
     addresses =  []
       cars.each do |car|
-        car.addresses.each do |address|
-        addresses.push(address)
-        end
+        addresses.push(car.addresses.take)
       end
     return addresses
   end

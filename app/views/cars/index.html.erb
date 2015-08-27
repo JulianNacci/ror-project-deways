@@ -43,6 +43,11 @@
     </span>
     <hr>
     <span>
+      <%= f.label :daily_price %>
+      <%= f.select :daily_rate_eq, options_for_select([['Select', ''], [10], [25]], :selected => :daily_rate) %>
+    </span>
+    <hr>
+    <span>
       <%= f.button :submit, class: 'btn btn-primary' %>
     </span>
     <% end %>
