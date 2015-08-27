@@ -8,8 +8,6 @@
         <div class="banner-shadow"></div>
         <div class="banner-content">
           <h1><%= @car.make %> <%= @car.model %></h1>
-          <p>Very cool stuff, useful and smart</p>
-          <a class="btn btn-primary btn-lg">GET IT</a>
         </div>
       </div>
     </div>
@@ -162,8 +160,8 @@
 
   <% if current_user == @car.user %>
     <%= link_to "Edit", edit_car_path(@car), class: "btn btn-info" %>
+    <%= link_to "Delete", car_path(@car), class: "btn btn-info", method: :delete, data: {confirm: "Are you sure ?"} %>
   <% end %>
-
   <%= link_to "Back", cars_path, class: "btn btn-danger" %>
 
 </div>

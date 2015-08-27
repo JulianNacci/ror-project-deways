@@ -27,13 +27,14 @@ class CarsController < ApplicationController
   end
 
   def show
-    @addresss = Address.all
+    @addresses = Address.all
     @booking = Booking.new
   end
 
   def new
     if user_signed_in?
       @car = Car.new
+      @car.addresses.build
 
     else
       redirect_to new_user_session_path
@@ -44,11 +45,11 @@ class CarsController < ApplicationController
     @car = Car.new(car_params)
     @user = User.find(current_user.id)
     @car.user = @user
-    @address = Address.new
     @car.save ? (redirect_to car_path(@car)) : (render 'new')
   end
 
   def edit
+    @car.addresses.build
   end
 
   def update
@@ -58,6 +59,7 @@ class CarsController < ApplicationController
 
   def destroy
     @car.destroy
+    redirect_to cars_path
   end
 
   private
@@ -67,7 +69,7 @@ class CarsController < ApplicationController
   end
 
   def car_params
-    params.require(:car).permit(:make, :model, :motorisation, :category, :seats, :daily_rate, :description, :year, :gear_box, :doors, :gaz_consumption, :picture)
+    params.require(:car).permit(:make, :model, :motorisation, :category, :seats, :daily_rate, :description, :year, :gear_box, :doors, :gaz_consumption, :picture, addresses_attributes: [:id, :car_id, :address, :_destroy])
   end
 
   def set_user

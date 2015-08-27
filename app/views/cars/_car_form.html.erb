@@ -1,15 +1,58 @@
 <div class="container">
   <%= simple_form_for @car do |f| %>
-    <%= f.input :make %>
-    <%= f.input :model %>
-    <%= f.input :motorisation %>
-    <%= f.input :gaz_consumption %>
-    <%= f.input :gear_box %>
-    <%= f.input :seats %>
-    <%= f.input :doors %>
-    <%= f.input :description %>
-    <%= f.input :picture %>
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <h3>Votre voiture</h3>
+      <p>Vous l'aimez, vous la chérissez...</p>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <h3>Votre voiture</h3>
+      <%= f.input :make %>
+      <%= f.input :model %>
+      <%= f.input :category, collection: ["Citadine", "Berline", "Familiale", "Utilitaire", "Minibus", "4x4", "Cabriolet", "Coupé", "Collection"]%>
+      <%= f.input :motorisation, collection: ["Essence", "Diesel", "Hybride", "Electrique", "GPL"] %>
+      <%= f.input :year %>
+      <%= f.input :gaz_consumption %>
+      <%= f.input :gear_box, collection: ["Manuelle", "Automatique", "Séquentielle"] %>
+      <%= f.input :seats, collection: 1..10 %>
+      <%= f.input :doors, collection: 2..6 %>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <h3>Tarif de location</h3>
+      <%= f.input :daily_rate, label: false, placeholder: "30€" %>
+      <h3>Description</h3>
+      <%= f.input :description, as: :text, label: false %>
+      <h3>Photo</h3>
+      <%= f.input :picture, label: false %>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <h3>Adresses</h3>
+      <div id="addresses">
+        <%= f.simple_fields_for :addresses do |address| %>
+              <%= render 'address_fields', f: address %>
+        <% end %>
+            <div class="links col-xs-12">
+                <%= link_to_add_association 'add address', f, :addresses, class:"btn btn-success form-control" %>
+            </div>
 
-    <%= f.button :submit, class:"btn btn-danger" %>
+      </div>
+      </span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4 text-center">
+      <%= f.button :submit, class:"btn video-banner-btn" %>
+    </div>
+  </div>
   <% end %>
 </div>
+
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    $(document).ready(function() {
+      $('.nested-fields').last().remove();
+    });
+  <% end %>
+<% end %>
+
