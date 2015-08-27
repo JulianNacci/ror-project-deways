@@ -18,6 +18,8 @@ gem 'devise'
 gem 'bootstrap-datepicker-rails', '~> 1.4.0' #need to perform 'gem install bootstrap-datepicker-rails' in the shell
 gem 'geocoder'
 
+gem "cocoon" #handle nested forms dynamic add and delete
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
