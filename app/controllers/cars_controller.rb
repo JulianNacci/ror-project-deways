@@ -10,30 +10,20 @@ class CarsController < ApplicationController
 
       # Get rid of the addresses that have several pick up spot for the same car
       #we get an array containing all the unique car_id
+
       unique_car_id = @addresses.map{|t| t.car_id}.uniq
+
       # We need to find the car associated
+
       unique_car_id.each do |car_id|
         car = Car.find(car_id)
-
         @cars.push(car)
-      @markers = marker_map(@addresses)
       end
     else
       @cars = Car.all
-      @addresses =  []
-      @cars.each do |car|
-        car.addresses.each do |address|
-        @addresses.push(address)
-        end
-      end
-      @markers = marker_map(@addresses)
+      find_car_address
     end
-
-    # @markers = Gmaps4rails.build_markers(@addresses) do |address, marker|
-    #   marker.lat address.latitude
-    #   marker.lng address.longitude
-
-    # end
+    @markers = marker_map(@addresses)
   end
 
   def show
@@ -57,15 +47,14 @@ class CarsController < ApplicationController
     @address = Address.new
     @car.save ? (redirect_to car_path(@car)) : (render 'new')
   end
-  def edit
 
+  def edit
   end
 
   def update
     @car.update(car_params)
     redirect_to car_path(@car)
   end
-
 
   def destroy
     @car.destroy
@@ -92,4 +81,12 @@ class CarsController < ApplicationController
     return markers
   end
 
+  def find_car_address
+    @addresses =  []
+      @cars.each do |car|
+        car.addresses.each do |address|
+        @addresses.push(address)
+        end
+      end
+  end
 end
