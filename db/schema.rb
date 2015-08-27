@@ -34,8 +34,8 @@ ActiveRecord::Schema.define(version: 20150827104235) do
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.string   "distance"
-    t.datetime "checkin_date"
-    t.datetime "checkout_date"
+    t.date     "checkin_date"
+    t.date     "checkout_date"
   end
 
   add_index "bookings", ["car_id"], name: "index_bookings_on_car_id", using: :btree
