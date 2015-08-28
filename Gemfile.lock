@@ -219,12 +219,9 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootstrap-sass
-<<<<<<< HEAD
   bootstrap3-datetimepicker-rails (~> 4.15.35)
-=======
   cocoon
   coffee-rails
->>>>>>> master
   devise
   figaro
   font-awesome-sass
