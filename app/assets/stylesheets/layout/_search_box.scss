@@ -1,0 +1,41 @@
+
+
+.search-box-radio {
+
+}
+
+.search-box-container {
+  background-color: $gray-lighter;
+  padding: 20px;
+}
+
+.radio {
+
+  background-color: $gray-lighter;
+  font-size: 12px;
+  line-height: 40px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+
+  & input[type="radio"] {
+    display:none;
+}
+  &:hover {
+    color: white;
+    background: darken($brand-color, 10%);
+    border-color: $brand-color;
+  }
+}
+
+.car-category-active {
+      background-color: $brand-color;
+    color: white;
+    inner-border: 2px solid #D23333;
+}
+
+
+
+.search-box-label {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

@@ -1,0 +1,43 @@
+<div class="container-fluid search-box-container">
+  <%= simple_search_form_for @ransack, @ransack_params  do |f| %>
+  <div class="search-box-field">
+    <div class="col-xs-12 search-box-field">
+      <h4 class="text-center search-box-label">Place</h4>
+      <%= f.input :addresses_address_cont, default: "@place", wrapper_html: {class: "container-fluid "}, input_html: {class: "full-width-address"},  label: false %>
+    </div>
+  </div>
+
+<hr>
+
+
+    <span class="form-inline search-box-radio">
+        <h4 class="text-center search-box-label">Categories</h4>
+        <%= f.input :category_eq, as: :radio_buttons, collection: %w(Citadine Berline Familiale Cabriolet Coupé 4x4 Utilitaire Minibus), wrapper_html: {class: " "}, input_html: {class: "radio-toolbar col-xs-6 col-sm-3"}, label: false %>
+      </span>
+</div>
+
+
+
+    <div class="col-xs-12 text-center">
+      <span>
+        <%= f.button :submit, "Find car", class: 'btn video-banner-btn' %>
+      </span>
+    <% end %>
+    </div>
+
+
+
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    $(document).on('ready', function() {
+      $('.radio').addClass("col-xs-6 col-sm-3 text-center");
+      $('.radio').click(function() {
+        $("span").removeClass("car-category-active");
+        $(this).addClass("car-category-active");
+      });
+
+    $('#car_addresses_address').val("<%= @place %> <%@ransak_place%>");
+
+    });
+  <% end %>
+<% end %>
