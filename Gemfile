@@ -27,6 +27,7 @@ end
 
 #filter search
 gem 'ransack'
+gem 'simple_form_ransack'
 
 
 
