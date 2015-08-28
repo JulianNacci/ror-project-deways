@@ -1,12 +1,12 @@
-<%= simple_form_for [@car, @booking] do |f|%>
+<%= simple_form_for ([@car, @booking]) do |f|%>
   <div class="box-booking-container">
-    <h3>Date de début</h3>
+    <!-- <h3>Date de début</h3> -->
     <div class="box-booking-date">
-      <%= f.input :checkin_date, :input_html => { class: "datepicker", data: {provide: "datepicker"}}, label: false %>
+      <%= f.input :checkin_date, as: :date, html5: true %>
     </div>
     <h3>Date de fin</h3>
     <div class="box-booking-date">
-      <%= f.input :checkout_date, :input_html => { class: "datepicker", data: {provide: "datepicker"}}, label: false %>
+      <%= f.input :checkout_date, as: :date, html5: true %>
     </div>
     <h3>Kilométrage estimé</h3>
     <div class="box-booking-kilometer">
