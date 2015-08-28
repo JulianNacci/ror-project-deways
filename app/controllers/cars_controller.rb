@@ -5,7 +5,7 @@ class CarsController < ApplicationController
     if params[:search] != ''
 
       @page_title = params[:search]
-      @addresses = Address.near(params[:search], 5)
+      @addresses = Address.near(params[:search], 15)
       @cars = delete_doubles(@addresses)
       @markers = marker_map(@addresses)
     else
@@ -27,7 +27,8 @@ class CarsController < ApplicationController
   end
 
   def show
-    @addresses = Address.all
+    @addresses = @car.addresses
+    @markers = marker_map(@addresses)
     @booking = Booking.new
   end
 
