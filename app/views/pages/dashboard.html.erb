@@ -1,0 +1,38 @@
+<div class="spacer"></div>
+<%= render 'shared/sidebar' %>
+<div class="text-center">
+  <h2>
+    Bookings summary
+  </h2>
+
+  <ul>
+      <%= @bookings.each do |booking| %>
+    <li>
+      <div class="post">
+
+    <% car = Car.find(booking.car_id)%>
+  <div class='post-body'>
+    <h2>
+      <%= booking.checkin_date %>
+    </h2>
+    <p>
+
+      <%= car.model %>
+    </p>
+  </div>
+  <div class='post-controls'>
+    <i class="fa fa-bars post-control post-control-hidden"></i>
+    <i class="fa fa-star post-control post-control-hidden"></i>
+    <div class="post-control">
+
+      </div>
+    </div>
+  </div>
+</div>
+        <% end %>
+    </li>
+
+  </ul>
+
+</div>
+

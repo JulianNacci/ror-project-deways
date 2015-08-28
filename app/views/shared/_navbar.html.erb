@@ -6,14 +6,7 @@
     <%= link_to root_path do %>
       <%= image_tag "logo.png", id: 'logo'%>
     <% end %>
-    <!-- </div> -->
 
-     <!-- <form action="" class="navbar-wagon-search">
-      <input type="text" class="navbar-wagon-search-input" placeholder="Search for featured stuff">
-      <button type="submit" class="navbar-wagon-search-btn">
-        <i class="fa fa-search"></i>
-      </button>
-    </form> -->
     <hr>
     <% if user_signed_in? %>
       <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link hidden-xs" do %>
@@ -33,7 +26,7 @@
               <% end %>
             </li>
             <li>
-              <%= link_to root_path do %>
+              <%= link_to pages_dashboard_path do %>
                 <i class="fa fa-home"></i>  <%= t ".profile", default: "Home" %>
               <% end %>
             </li>

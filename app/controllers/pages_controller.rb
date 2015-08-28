@@ -3,4 +3,7 @@ class PagesController < ApplicationController
     @address = Address.near(params[:address], 10)
   end
 
+  def dashboard
+    @bookings = current_user.bookings
+  end
 end
