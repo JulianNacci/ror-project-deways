@@ -17,11 +17,26 @@
           <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
         <% end %>
 
+        <hr>
         <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
         <%= f.input :password_confirmation, required: false %>
-        <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
-        <%= f.input :picture %>
+        <hr>
 
+        <%= f.input :first_name, hint: 'Change your first name', required: false %>
+        <%= f.input :last_name, hint: 'Change your last name', required: false %>
+        <%= f.input :address, hint: 'new address?', required: false %>
+        <hr>
+        <h3>Change your picture here</h3>
+
+
+        <%#= image_tag current_user.picture.url(:thumb), width: '30px' %>
+        <%= f.input :picture, hint: '' %>
+
+
+
+        <hr>
+
+        <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
         <%= f.button :submit, "Update", class: 'btn video-banner-btn' %>
         <p><%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
       <% end %>
