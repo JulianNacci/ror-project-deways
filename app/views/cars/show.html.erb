@@ -118,31 +118,7 @@
 
   <!-- SECOND COLUMN -->
   <div class="col-xs-12 col-sm-4 no-padding">
-    <%= simple_form_for [@car, @booking] do |f|%>
-      <div class="box-booking-container">
-        <h3>Date de début</h3>
-        <div class="box-booking-date">
-          <%= f.input :checkin_date, :input_html => { class: "datepicker", data: {provide: "datepicker"}}, label: false %>
-        </div>
-        <h3>Date de fin</h3>
-        <div class="box-booking-date">
-          <%= f.input :checkout_date, :input_html => { class: "datepicker", data: {provide: "datepicker"}}, label: false %>
-        </div>
-        <h3>Kilométrage estimé</h3>
-        <div class="box-booking-kilometer">
-          <%= f.input :distance, label: false %>
-        </div>
-      </div>
-
-      <div class="box-price-container">
-        <div class="box-price-price text-center">
-          <span><%= @car.daily_rate.to_i %>€ </span> / jour
-        </div>
-      </div>
-      <div class="box-price-booking-btn text-center">
-        <%= f.button :submit, "Send a request", class:"btn btn-danger" %>
-      </div>
-    <% end %>
+    <%= render 'bookings/shared/bookingform' %>
   </div>
 </div>
 
