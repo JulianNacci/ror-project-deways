@@ -7,13 +7,11 @@
         <div class="banner-shadow"></div>
         <div class="banner-content">
           <h1><%= @car.make %> <%= @car.model %></h1>
-          <p>Very cool stuff, useful and smart</p>
-          <a class="btn btn-primary btn-lg">GET IT</a>
         </div>
       </div>
     </div>
     <div class="car-details-map-container">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d83998.91163207516!2d2.3470599!3d48.85885894999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sfr!4v1440446899609" width="800" height="600" frameborder="0" style="border:0"></iframe>
+      <div id="map" style='width: 760px; height: 300px;'></div>
       <p><i class="fa fa-map-marker"></i> Paris, France</p>
     </div>
     <div class="car-details-description-container">
@@ -125,6 +123,29 @@
 <div>
   <% if current_user == @car.user %>
     <%= link_to "Edit", edit_car_path(@car), class: "btn btn-info" %>
+    <%= link_to "Delete", car_path(@car), class: "btn btn-info", method: :delete, data: {confirm: "Are you sure ?"} %>
   <% end %>
   <%= link_to "Back", cars_path, class: "btn btn-danger" %>
 </div>
+
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    $(document).on('ready', function() {
+      handler = Gmaps.build('Google');
+      handler.buildMap({
+
+      <!-- RAJOUTE le style de la carte dans le builder -->
+
+      provider: {
+      styles: [{"featureType":"administrative","elementType":"all","stylers":[{"visibility":"on"},{"saturation":-100},{"lightness":20}]},{"featureType":"road","elementType":"all","stylers":[{"visibility":"on"},{"saturation":-100},{"lightness":40}]},{"featureType":"water","elementType":"all","stylers":[{"visibility":"on"},{"saturation":-10},{"lightness":30}]},{"featureType":"landscape.man_made","elementType":"all","stylers":[{"visibility":"simplified"},{"saturation":-60},{"lightness":10}]},{"featureType":"landscape.natural","elementType":"all","stylers":[{"visibility":"simplified"},{"saturation":-60},{"lightness":60}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"},{"saturation":-100},{"lightness":60}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"},{"saturation":-100},{"lightness":60}]}]
+    },
+    <!-- Fin du style de la carte -->
+      internal: { id: 'map' } }, function(){
+        markers = handler.addMarkers(<%= raw @markers.to_json %>);
+
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+      });
+    })
+  <% end %>
+<% end %>

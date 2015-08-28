@@ -18,6 +18,19 @@ gem 'devise'
 gem 'geocoder'
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.15.35'
+gem 'bootstrap-datepicker-rails', '~> 1.4.0' #need to perform 'gem install bootstrap-datepicker-rails' in the shell
+gem "coffee-rails"
+gem "gmaps4rails"
+source 'https://rails-assets.org' do
+  gem "rails-assets-underscore"
+end
+
+#filter search
+gem 'ransack'
+
+
+
+gem "cocoon" #handle nested forms dynamic add and delete
 
 group :development, :test do
   gem 'binding_of_caller'
