@@ -2,27 +2,34 @@ class CarsController < ApplicationController
   before_action :set_car, only: [:show, :update, :edit, :destroy]
 
   def index
-    if params[:search] != ''
 
-      @page_title = params[:search]
-      @addresses = Address.near(params[:search], 5)
+    @place = params[:place]
+
+    if params[:place] != ''
+      @page_title = params[:place]
+      @addresses = Address.near(params[:place], 15)
       @cars = delete_doubles(@addresses)
+
       @markers = marker_map(@addresses)
+      #raise
     else
       @cars = Car.all
       @addresses = find_car_address(@cars)
       @markers = marker_map(@addresses)
     end
-    @q = Car.ransack(params[:q])
+
+    @ransack_params = params[:q] || {}
+    @ransack = Car.ransack(@ransack_params)
+
+    #params[:q] = Rails.cache.read("q")
 
     if params[:q]
-      cars1 =[]
-      cars2 = @q.result(distinct: true)
-      cars1 = @cars & cars2
-      @cars = cars1
+
+      @cars = @ransack.result(distinct: true).includes(:addresses)
 
       @addresses = find_car_address(@cars)
       @markers = marker_map(@addresses)
+
     end
   end
 
