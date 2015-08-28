@@ -1,7 +1,6 @@
 <div class="spacer"></div>
 <div class="container">
-
-<!-- FIRST COLUMN -->
+  <!-- FIRST COLUMN -->
   <div class="col-xs-12 col-sm-8 no-padding">
     <div class="car-details-picture-container">
       <div class="banner text-center" style="background-image: url('<%= @car.picture %> ')">
@@ -11,18 +10,14 @@
         </div>
       </div>
     </div>
-
     <div class="car-details-map-container">
-        <div id="map" style='width: 760px; height: 300px;'></div>
-        <p><i class="fa fa-map-marker"></i> Paris, France</p>
+      <div id="map" style='width: 760px; height: 300px;'></div>
+      <p><i class="fa fa-map-marker"></i> Paris, France</p>
     </div>
-
     <div class="car-details-description-container">
       <h3>Description</h3>
       <p><%= @car.description %></p>
-
       <h3>Caractéristiques techniques</h3>
-
       <div class="col-xs-12 col-sm-6">
         <table class="car-details-description-table">
           <tbody>
@@ -59,9 +54,7 @@
           </tbody>
         </table>
       </div>
-
       <h3>Options et accessoires</h3>
-
       <div class="col-xs-12 col-sm-4">
         <div class="car-details-car-option">
           <i class="fa fa-check-square-o"></i>
@@ -98,7 +91,7 @@
           <span>Pneus neige</span>
         </div>
       </div>
-            <div class="col-xs-12 col-sm-4">
+      <div class="col-xs-12 col-sm-4">
         <div class="car-details-car-option">
           <i class="fa fa-square-o"></i>
           <span>Chaines</span>
@@ -117,53 +110,22 @@
         </div>
       </div>
     </div>
-
     <div class="col-xs-12 col-sm-6">
-
     </div>
   </div>
 
-<!-- SECOND COLUMN -->
+  <!-- SECOND COLUMN -->
   <div class="col-xs-12 col-sm-4 no-padding">
-  <%= simple_form_for [@car, @booking] do |f|%>
-    <div class="box-booking-container">
-      <h3>Date de début</h3>
-      <div class="box-booking-date">
-        <%= f.input :checkin_date, :input_html => { class: "datepicker", data: {provide: "datepicker"}}, label: false %>
-      </div>
-      <h3>Date de fin</h3>
-      <div class="box-booking-date">
-        <%= f.input :checkout_date, :input_html => { class: "datepicker", data: {provide: "datepicker"}}, label: false %>
-      </div>
-      <h3>Kilométrage estimé</h3>
-      <div class="box-booking-kilometer">
-        <%= f.input :distance, label: false %>
-      </div>
-    </div>
-
-
-    <div class="box-price-container">
-      <div class="box-price-price text-center">
-        <span><%= @car.daily_rate.to_i %>€ </span> / jour
-      </div>
-    </div>
-    <div class="box-price-booking-btn text-center">
-      <%= f.button :submit, "Send a request", class:"btn btn-danger" %>
-    </div>
-    <% end %>
-
+    <%= render 'bookings/shared/bookingform' %>
   </div>
 </div>
 
-
-
-
+<div>
   <% if current_user == @car.user %>
     <%= link_to "Edit", edit_car_path(@car), class: "btn btn-info" %>
     <%= link_to "Delete", car_path(@car), class: "btn btn-info", method: :delete, data: {confirm: "Are you sure ?"} %>
   <% end %>
   <%= link_to "Back", cars_path, class: "btn btn-danger" %>
-
 </div>
 
 <% content_for(:after_js) do %>
