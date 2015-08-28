@@ -12,10 +12,10 @@
           <li><strong>Places : </strong><%= @car.seats %></li>
 
           <hr>
-          <li><strong>Nombre de jours: </strong><%= (@booking.checkout_date - @booking.checkin_date).to_i %></li>
+          <li><strong>Nombre de jours: </strong><%= ((@booking.checkout_date - @booking.checkin_date).to_i)/86400 %></li>
           <li><strong>Période: </strong>du <%= @booking.checkin_date %> au <%= @booking.checkout_date %>.</li>
           <li><strong>Prix journalier : </strong><%= @car.daily_rate %>€</li>
-          <li><strong>Total TTC: </strong><%= (@booking.checkout_date - @booking.checkin_date).to_i * @booking.car.daily_rate %> €</li>
+          <li><strong>Total TTC: </strong><%= ((@booking.checkout_date - @booking.checkin_date).to_i)/86400 * @booking.car.daily_rate %> €</li>
           <hr>
         </ul>
         <span><i class="fa fa-print"></i> print</span>

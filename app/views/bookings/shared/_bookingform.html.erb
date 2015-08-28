@@ -23,36 +23,3 @@
     <%= f.button :submit, "Send a request", class:"btn btn-danger" %>
   </div>
 <% end %>
-
-<% content_for :after_js do %>
-  <!-- DATEPICKER -->
-  <div class="row">
-    <div class='col-md-5'>
-      <div class="form-group">
-        <div class='input-group date' id='datetimepicker1'>
-          <input type='text' class="form-control" />
-          <span class="input-group-addon">
-            <span class="glyphicon glyphicon-calendar"></span>
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class='col-md-5'>
-      <div class="form-group">
-        <div class='input-group date' id='datetimepicker2'>
-          <input type='text' class="form-control" />
-          <span class="input-group-addon">
-            <span class="glyphicon glyphicon-calendar"></span>
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div>
-    <input type="submit" class="btn btn-primary">
-  </div>
-
-  <!-- END DATEPICKER -->
-<% end %>
