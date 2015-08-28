@@ -34,7 +34,8 @@ class CarsController < ApplicationController
   end
 
   def show
-    @addresses = Address.all
+    @addresses = @car.addresses
+    @markers = marker_map(@addresses)
     @booking = Booking.new
   end
 

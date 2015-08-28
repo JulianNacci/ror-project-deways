@@ -8,8 +8,12 @@
   color: white;
   &-info {
     background: $green;
+    position: relative;
+    top: 70px;
   }
   &-warning {
     background: $red;
+    position: relative;
+    top: 70px;
   }
 }
